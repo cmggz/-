@@ -1,0 +1,17 @@
+.display{
+    float: left;
+    width: 312px;
+    height: 560px;	
+}
+.big-display{
+	cursor: crosshair; 
+	position: relative;
+}
+.bigger{
+	position: absolute;
+	top: 178px; 
+	left: -1px; 
+	width: 131px; 
+	height: 131px; 
+	border-width: 1px; 
+}
