@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+// 		6.	编写一个带一个参数（指定显示多少层星号“*”的函数，它在页面止输出的一个5层星号“*”图案类似。---金字塔
+     
+// 其中，每行的星号“*”之间有一个空格间隔。
+	
+	function star(n){
+		for(var i=0;i<n;i++){
+			for(var j=0;j<n-i;j++){
+				document.write("&nbsp;");
+			}
+			for(var k=0;k<=i;k++){
+				document.write("*&nbsp;");
+			}
+			document.write("<br>");
+		}
+	}
+	star(6);
+	</script>
+</body>
+</html>

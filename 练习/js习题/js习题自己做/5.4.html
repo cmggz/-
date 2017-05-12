@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 4.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。
+		
+		//求素数
+		function pr(n){
+			if(n==2){
+				return true;
+			}
+			for(var i=2;i<n;i++){
+				if(n%i==0){
+					return false;
+				}
+			}
+			return true;   //不能写在if语句后面，例如9不行
+		}
+	
+		var num=0;
+		for(var i=100;i<1000;i++){
+			if(pr(i)){
+				document.write(i+"&nbsp;");
+				num++;
+				if(num%6==0){
+					document.write("<br>")
+				}	
+			}
+		}
+
+	</script>
+</body>
+</html>

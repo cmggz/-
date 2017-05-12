@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//5.	编制一个将两个字符串交叉合并的函数Merge(s1,s2)，例如Merge("123","abc"）的返回结果是"1a2b3c"，如果两个字符串的长度不同，那么就将多余部分直接合并到结果字符串的末尾，如Merge("123456",''abc''）的返回结果是”1a2b3c456”。
+
+		function Merge(s1,s2){
+			var result="";
+			max_len = Math.max(s1.length,s2.length);
+			for(var i=0;i<max_len;i++){	
+				result += s1.charAt(i);
+				result += s2.charAt(i);
+			}			
+			return result;
+		}
+		var a=(prompt("请输入第一个字符串",""));
+		var b=(prompt("请输入第二个字符串",""));	
+		alert("收集的字符串："+Merge(a,b));
+
+	</script>
+</body>
+</html>

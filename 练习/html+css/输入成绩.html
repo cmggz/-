@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num=prompt("输入XXX的成绩","");
+		var num1=num;
+		num=Number(num);//''  '   '  '0'  =>0
+		if (num==0) {
+			num=parseInt(num1);//"12abc"  =>12
+		}
+		if (isNaN(num)) {
+			alert("输入的不是数字");
+		}else{
+			if(num>=60 && num<=100){
+				alert("及格");
+			}else{
+				if(num>=0 && num<=60){
+				alert("不及格");
+				}else{
+					alert("输入超过成绩范围");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

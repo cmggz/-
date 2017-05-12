@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框瑜入x的值，能得到相应的计算结果。
+
+		       //局部变量----获得f的值，需要return---return返回的是一个值
+		function fun(){
+			var x=(prompt("输入X",""));
+			var f=4*x*x+3*x+2;    //x*x----Math.pow(x,2)
+			return f;	
+		}
+		alert("f(x)="+fun());
+
+
+
+				//全局变量
+		// function fun(){
+		// 	x=(prompt("输入X",""));
+		// 	f=4*x*x+3*x+2;	
+		// }
+		// fun();
+		// alert("f(x)="+f);
+		
+	</script>
+</body>
+</html>
