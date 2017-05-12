@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		img{
+			border: 0;
+
+		}
+		span{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			background: #000;
+			text-align: center;
+			margin: 5px auto;
+			color: #fff;
+		}
+		.carousel{
+			width: 700px;
+			height: 495px;
+			margin: 80px auto;
+			overflow: hidden;
+		}
+		.carousel-imgs{
+			width: 2800px;
+			height: 465px;
+		}
+		.carousel-imgs img{
+			width: 700px;
+			height: 465px;
+			float: left;
+		}
+		#carousel-btns1{
+			float: left;
+		}
+		#carousel-btns2{
+			float: right;
+		}
+		#carousel-btns2 li.selected{
+			background: orange;
+		}
+		#carousel-btns2 li{
+			background: #000;
+			color: #fff;
+			display: inline-block;
+			margin-right: 5px;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			margin: 5px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel" id="carousel">
+		<div class="carousel-imgs">
+			<img src="../../网上商城/img/blog-1.jpg" alt="">
+			<img src="../../网上商城/img/blog-2.jpg" alt="">
+			<img src="../../网上商城/img/blog-3.jpg" alt="">
+			<img src="../../网上商城/img/blog-4.jpg" alt="">
+		</div>
+		<div id="carousel-btns1">
+			<span id='prev'>&lt;</span>
+			<span id="next">&gt;</span>
+		</div>
+		<ul id="carousel-btns2">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+	<script>
+		//id只能从document中取到
+		var oCarousel = document.getElementById('carousel');
+		var aImg = document.getElementsByTagName('img');
+		var oCarouselBtns2 = document.getElementById('carousel-btns2');	
+		var aLi = oCarouselBtns2.getElementsByTagName('li');
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index = i;
+			aLi[i].onmouseover = function(){
+				changeImg(this.index);
+				iNow = this.index;
+				// for(var l=0; l<aLi.length; l++){
+				// 	aLi[l].className = "";
+				// 	aImg[l].style.display = 'none';					
+				// }
+				// aLi[this.index].className = 'selected';
+				// aImg[this.index].style.display= 'block';
+			}
+		}
+
+		var iNow = 0;	
+		var oNext = document.getElementById('next');	
+		oNext.onclick = function(){
+			iNow++;
+			// if(iNow == aLi.length){
+			// 	iNow = 0;
+			// }
+			iNow=iNow%aLi.length;
+			changeImg(iNow);
+			// for(var i=0; i<aLi.length; i++){
+			// 	aLi[i].className = "";
+			// 	aImg[i].style.display = 'none';					
+			// }
+			// aLi[iNow].className = "selected";
+			// aImg[iNow].style.display= 'block';
+		}
+
+		var oPrev = document.getElementById('prev');
+		oPrev.onclick = function(){	
+			if(iNow == 0){
+				iNow = aLi.length;
+			}
+			iNow--;
+			changeImg(iNow);
+		}
+
+		//上面函数有相同的部分，就封装以下changeImg函数
+		function changeImg(index){
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].className = "";
+				aImg[i].style.display = 'none';					
+			}
+			aLi[index].className = "selected";
+			aImg[index].style.display= 'block';
+		}
+
+		//setInterval设置计时器
+		oCarousel.onmouseover = function(){  
+			clearInterval(timer);  
+		}  
+ 		oCarousel.onmouseout = function(){  
+			run();  
+		}  
+		function run(){  
+			timer = setInterval(function(){
+				oNext.onclick();},2000);  
+		}  
+		//function(){oNext.onclick();}---函数的调用
+		//可以换成oNext.onclick
+		run(); 
+
+
+	</script>	
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="div1">
+			<ul id="ul1">
+				<li class="aa">11</li>
+				<li>22</li>
+				<li class="aa">33</li>
+				<li>44</li>
+			</ul>
+			<ul>
+				<li class="aa">11</li>
+				<li>22</li>
+				<li class="aa">33</li>
+				<li>44</li>
+			</ul>
+		</div>
+		<script>
+			//dom---document object model
+			//document.getElementById()找不到，返回null
+			//document.getElementByTagName()找不到，返回[]
+			
+			var oDiv1=document.getElementById("div1");
+			var aLi=document.getElementsByTagName("li");
+			var aA=document.getElementsByClassName("aa");    //document.getElementsByClassNameIE8以下不支持
+			
+			//下面函数可以在任何浏览器兼容
+			function getClass(clsName,context){
+				var result = [];
+				// if (context == undefined){
+				// 		var arr=document.getElementsByTagName("*");
+				// }else{
+				// 		var arr=context.getElementsByTagName("*");
+				// }
+				
+				// 简化上面----if else
+				context = context || document;
+				var arr=context.getElementsByTagName("*");
+
+				for(var i=0;i<arr.length;i++){
+					//class--保留字  .className
+					if(arr[i].className.indexOf(clsName) != -1){
+						result.push(arr[i]);						
+					}
+				}
+				return result;
+			}
+			var oUl1=document.getElementById("ul1");
+			var arr=getClass("aa",oUl1);
+			for(var i=0;i<arr.length;i++){
+				arr[i].style.background ="blue";
+			}
+
+		</script>
+	</body>
+	</html>	

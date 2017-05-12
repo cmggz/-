@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#div1{
+		background: #f00;
+		width: 200px;
+		height: 200px;
+		padding: 10px;
+		margin: 10px;
+		border: 5px solid #000;
+	}
+	</style>
+</head>
+<body>
+	<div id='div1'>1111</div>
+	<script>
+	var oDiv = document.getElementById('div1');
+	//oDiv.offsetWidth包含border及以内的宽度，且只能取值，不能赋值
+	//oDiv.offsetHeight
+	console.log(oDiv.offsetWidth);
+	//oDiv.style.width只能取到内联样式,内联没有  ''
+	console.log(oDiv.style.width);
+	//oDiv.currentStyle.width----ie支持，取到真实宽度
+	//getComputedStyle(oDiv,null).width---标准支持，取到真实宽度
+	//所以封装一个getStyle函数使得均支持
+	function getStyle(elem,attr){
+		if(elem.currentStyle){
+			return elem.currentStyle[attr];
+		}else{
+			return getComputedStyle(elem,null)[attr];//取变量中的属性时用[]
+		}
+	}
+	console.log(getStyle(oDiv,'width'));//width不是变量，字符串，需要加''
+	</script>
+</body>
+</html>

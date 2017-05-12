@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+			
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main-menu ul{
+			display: none;
+		}
+
+
+	</style>
+</head>
+<body>
+	<ul id="menu-box">
+		<li class="main-menu">
+			<h3 num='1'>管理区</h3>
+			<ul>
+				<li>001</li>
+				<li>002</li>
+				<li>003</li>
+			</ul>
+		</li>
+		<li class="main-menu">
+			<h3>交流区</h3>
+			<ul>
+				<li>001</li>
+				<li>002</li>
+				<li>003</li>
+			</ul>
+		</li>
+	</ul>
+
+<script>
+	function getClass(clsName,context){
+		var result = [];
+		context = context || document;
+		var arr=context.getElementsByTagName("*");
+		for(var i=0; i<arr.length; i++){
+			if(arr[i].className.indexOf(clsName) != -1){
+				result.push(arr[i]);						
+			}
+		}
+		return result;
+	}
+	var oMenuBox = document.getElementById('menu-box');
+	var aLi = getClass("main-menu",oMenuBox);
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onclick = function(){
+			var aUl = this.getElementsByTagName("ul")[0];
+			// ----var aUl = this.children[1];
+			if (aUl.style.display == 'none' || aUl.style.display == ''){ 
+				aUl.style.display = 'block';  //.style 只能取到内联样式
+			}else{
+				aUl.style.display = 'none';
+			}
+
+			if (aUl.style.display == 'block'){
+				aUl.style.display = 'none';
+			}else{
+				aUl.style.display = 'block';
+			}	
+		}
+	}
+	
+	// var aH3 = document.getElementsByTagName('h3');
+	// var oMenuBox = document.getElementById('menu-box');
+	// var aUl = oMenuBox.getElementsByTagName('ul');
+	// for(var i=0;i<aH3.length;i++){
+	// 	aH3[i].index = i;
+	// 	aH3[i].onclick = function(){
+	// 		if (aUl[this.index].style.display == 'block'){
+	// 			aUl[this.index].style.display = 'none';
+	// 		}else{
+	// 			aUl[this.index].style.display = 'block';
+	// 		}
+	// 	}
+	// }			
+</script>
+</body>
+</html>
