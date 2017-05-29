@@ -110,12 +110,14 @@ body{
 }
 #main-nav span{
     margin-left: 14px;
+
 }
 #main-nav span a{
 	padding: 0 8px;
     font-weight: 700;
     color: #fff;
     font-size: 15px;
+  
 }
 .sub-nav{
 	background: #FFFFFF;
@@ -125,13 +127,14 @@ body{
     top: 105px;
     left: 270px;
     width: 200px;
+    z-index: 99;
 }
 .sub-nav a{
 	margin: 8px 8px;
 	color: #000;
 }
 .sub-man{
-	 position: absolute;
+	position: absolute;
     top: 105px;
     left: 395px;
 }
@@ -194,4 +197,15 @@ body{
     position: absolute;
     top: -3px;
     width: 21px;
+}
+
+#footer{
+	margin: 0 auto;
+    width: 990px;
+    color: #666666;
+    padding: 18px 0;
+    text-align: center;	
+    position: absolute;
+    top: 680px;
+    left: 190px;
 }

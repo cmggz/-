@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.news div{
+			display: none;
+		}
+		.news .first{
+			display: block;
+		}
+		ul li{
+			float: left;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class='news'>
+		<div class='first'>11</div>
+		<div class='first'>22</div>
+		<div class='first'>33</div>
+		<div class='second'>44</div>
+		<div class='second'>55</div>
+		<div class='second'>66</div>
+		<div class='third'>77</div>
+		<div class='third'>88</div>
+		<div class='third'>99</div>
+		<div class='fourth'>1010</div>
+	</div>
+
+	<ul>
+		<li class='prev'><a href="">上一页</a></li>
+		<li class='next'><a href="">下一页</a></li>
+	</ul>
+	<script src='jquery-1.12.4.js'></script>
+	<script>
+		var iNow = 0;
+		$('.next').on('click',function(){
+			iNow = iNow+3;
+			$('.news div').slice(iNow,iNow+3).show().siblings().hide();
+			
+		})	
+		
+	</script>
+</body>
+</html>

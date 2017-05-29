@@ -1,0 +1,333 @@
+链接:https://pan.baidu.com/s/1geU7Ov5 密码:neh5---实例练习
+
+git地址：https://github.com/johnnysw/fellows13
+https://github.com/cmggz/-----密码：cmg378597337
+
+网盘提取地址  链接: https://pan.baidu.com/s/1miiFpbE 
+
+http://css.doyoe.com/-----css手册
+
+bootstrap-----CSS/HTML框架
+
+kissy---组件网站
+
+html,css---w3c
+js---ECMA
+
+js标准---developer.mozilla.org
+
+javascript权威指南
+Javascript高级程序设计第3版
+dom编程艺术
+
+html:负责显示内容
+css:负责样式（css 层叠样式表 casccading style sheet）
+javascript:负责交互
+
+文件编码：
+1.utf-8(65536,0-65535）
+2.gbk(gb2312)----只显示中文
+
+<meta charset="UTF-8">----字符集，给浏览器看
+<meta name="keywords" content=" ">----通过关键字使搜索引擎搜到，给搜索引擎看
+<meta name="description" content=" ">-----简介，给搜索引擎看
+
+doctype(document type)
+
+src:source
+
+tr:tablle row
+td:table data
+
+<td colspan="2">-----某行跨两列
+
+Ctrl+?----注释
+Ctrl+s----保存
+Ctrl+z----撤销
+Ctrl+f----搜索
+
+html语义化：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）
+便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。
+（每个标签都有自己代表的意思，不能乱用，p段落,h标题）
+
+字体图标（icon图标）
+
+i:italic斜体
+
+域名与IP地址一一对应，DNS服务器（国家管理）把域名转换成IP地址，并
+把客户端和服务区联系起来。
+
+
+内联样式 > 内部样式  外部样式(取决于内部与外部的先后顺序)
+优先使用外部样式，少使用内联。
+外部样式用link加载
+
+选择器：
+1.标签选择器
+2.id选择器（#属性值） id=>identify  特点：id属性值唯一
+3.分组选择器（h1,p{ }）
+4.class(类)选择器（.属性值）  特点：class属性值可以重复
+  多类选择器（相同的属性取决于声明的顺序，与使用顺序无关）
+5.后代选择器（选择器1 选择器2）
+6.子代选择器（选择器1>选择器2）只选择选择器1，在IE6下不兼容
+7. 伪类选择器    a(或者选择器):hover{color:red;}鼠标滑过可以
+使文本变成红色，css独有的交互，但IE6中只支持a hover
+
+选择器的权重：
+!important > 内联(1000) > id(100) > class(10) > 标签(1) 
+!important不建议使用
+
+盒模型Box Modle
+网页中一切元素都是框：
+1.块框：垂直排列，可以设置宽和高（div,p,h1,table,list）
+2.行框：水平排列，不可设置宽和高，是由内容决定的（a,span）---不能设置上外边距
+(display:block;变成块框)
+(display:inline;变成行框）
+(display:inline-block;可设置宽和高）---IE6不支持
+  外边距(margin):补白
+  内边距(padding):填充
+  边框
+
+定位position
+1.相对定位relative：相对于自己的初始位置，空间不释放
+2.绝对定位absolute：绝对定位的元素的位置相对于最近的已定位祖先元素，
+如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块body
+3.固定定位fixed：永远相对于浏览器，不同于相对于body(IE6不支持)
+4.静态定位static：默认定位
+
+<div></div> divide区块，用来做布局
+div块级元素，属性display:inline-block;可以变成行元素，
+但是会有间隙(<div id="a">a</div><div id="b">b</div>---间隙消失)，
+且IE6中不支持
+
+浮动float
+向左浮动会使元素变成行元素，但不会有间隙，且兼容性好（在IE6中支持）
+
+元素塌陷问题：
+子元素浮动，空间释放，没有元素撑着父元素，父元素塌陷，无高度
+解决：1.写好父元素的height
+      2.添加一个虚拟的子元素，并对子元素的属性
+        规定clear:both;
+      3.给父元素加属性overflow:hidden;
+
+外边距合并问题：取较大值
+
+
+颜色：
+1.rgb(0,0,0)--黑色  rgb(255,0,0)--红色
+2.16进制 #000000--黑色 #ffffff--白色
+3. 简写  #000--黑色    #fff--白色
+
+快速打出列表：ul>li*n
+              ul>li*n>a[href=#]
+
+列表中ul与li间隙原因：标准浏览器是ul内边距；IE6浏览器是ul外边距
+解决办法：*{margin：0；padding：0；}
+
+样式重置（css reset）
+1.*{margin:0;padding:0;}---解决ul与li间隙问题
+2.a{text-decoration:none;}---去掉超链接的下划线
+3.ul,ol{list-style:none;}---去掉列表的小点
+4.img{border:0;}---不显示图像边框
+
+图像加载显示
+1.<img src="image" alt="">
+2.属性background:#000 url(image) no-repeat -100px -100px;（距离图像左上角x轴100像素；
+距离图像左上角y轴100像素；）-------css sprite(精灵/雪碧图)---性能优化，
+减少了图片数量，从而减少了对服务器的请求次数----IE8不兼容----适合不变化的小图片，
+不适合商品图片
+3.字体图标:可放大缩小变颜色
+
+index(首页)
+
+<input type="checkbox">----复选框
+<input type="radio">----单选框
+<select>
+	<option value="">男</option>
+	<option value="">女</option>
+</select>-----列表框
+
+转义符：
+&lt;---<小于号
+&gt;--->大于号
+&nbsp;----一个空格
+
+nav:navogator(导航栏)
+
+margin:0 auto;-----元素居中（0是上下，auto是左右）
+
+单行子元素垂直居中：给父元素设置height和line-hight,可以使子元素垂直居中
+
+cursor: pointer;/*鼠标变手形*/
+<a href=""></a>---自动变手状
+
+水平居中：
+行元素、文本：1、父元素加text-align: center;子元素居中 
+块级：1、margin：0 auto； 2、定位 left:50%; margin-left：-高度的一半；
+
+
+垂直局中
+1.vertical-align:middle;(两个元素并列时，单行文本)
+2.单行子元素垂直居中：给父元素设置height和line-hight,可以使子元素垂直居中
+
+元素单位：px；em(相对于自己的父元素大小)，rem(相对于自己的根元素html的大小)
+
+：last-child伪类选择器，IE6-8不支持，选择最后一个li或者div
+：last-child{
+	margin-right:0;
+	float:right;
+}
+
+对li浮动，float:left;贴着最左边
+若要居中，对li设置display：inline-block;但IE6不支持。
+
+继承的优先级低于自己设置的
+
+:nth-child(2n+1){
+	float:left;
+}
+:nth-child(2n){
+	float:right;
+}--------奇数列靠左，偶数列靠右
+
+border-radius: **px **px **px **px; /*边框圆角*/---最大是宽度的50%
+
+图片是行级块元素，图片下边会多出部分区域，加display: block可取消多出的部分
+
+
+js{js基础，DOM,BOM}
+
+JS数值类型
+1.基本数据类型：字符串，数字，布尔值，特殊数据类型（undefined;null）
+2.引用数据类型：对象，数组
+
+4+"5"---"45"   4+"a"---"4a"
+4-"3"---1      4-"a"---NaN(Not a Number)
+
+6/0----infinity无限大
+
+短路运算 alert(2==3 && 4/1)---只计算到2==3为假，停止运算
+
+var a=5;     !a=false;
+var a=0;     !a=true;----非0的数字为true,0为false
+                     ----非空字符串为true,空字符串为false
+                     ----非undefined为true,undefined为false
+
+typeof 变量名---检测数值类型---"string","number",'object'---数组和对象均返回object
+
+arr instanceof Arrary()---判断是否是数组，返回true;
+obj instanceof Arrary()---判断是否是数组，返回false
+
+对象：1.内置对象 2.自定义对象 3.dom对象
+
+undefined情况：1.var变量，但没赋值 2.数组长度大于数组数量索引（越界）
+               3.函数没有return   4.访问对象下没有的属性
+
+函数表示：1.函数声明---会提升
+          2.函数表达式
+
+propmt输入的均为字符型
+
+
+dom:document object model---js研究html标签，html标签就是dom
+
+.getElementById----通过Id获取元素
+ 
+通过标签.getElementsByTagName获取元素，设置标签的每一元素的属性需要for循环
+
+通过.getElementsByClassName获取元素,设置标签的每一元素的属性需要for循环,但是低版本浏览器不支持，
+可以自己封装一个函数，使所有浏览器均支持
+
+class保留字，需要用.className获取class名
+
+.style 只能取到内联样式
+
+css设置透明度：给某一元素设置背景颜色透明度，元素里面的内容和子元素均透明
+filter:alpha(opacity=50);----ie支持,0-100
+-moz-opacity:0.5;---火狐支持,0-1
+opacity:0.5;-----其他支持，0-1
+
+背景透明，元素不透明---background: rgba(0,0,0,0.6);---但ie6不支持
+
+CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。有兼容问题。
+eg: transition:width 2s ease;
+
+动画：
+animation: run 2s ease 1s forwards;----forwards保持最后的状态
+@keyframes run{
+	50%{
+		width: 300px;
+		height: 400px;
+	}
+	100%{
+		width: 500px;
+		height: 600px;
+	}
+}
+
+box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.15) inset;----设置内阴影
+
+//事件e三要素：事件源;事件处理函数;事件
+div.onclick = function(e){
+	e = e || event;
+	e.target || event.srcElement;
+}
+//e.target---取到事件源,标准浏览器兼容
+//event.srcElement---取到事件源,ie浏览器兼容
+//事件的冒泡--点击子元素，触发父元素
+//阻止事件冒泡：
+e.stopPropagation();   //标准支持
+e.cancelBubble = true; //ie支持
+//阻止默认行为
+e.preventDefault(); //标准支持
+e.returnValue = false; //ie支持
+e.keyCode; || e.which;----返回键盘码，ie,标准均支持
+
+requirejs---模块化加载---<script src='require.js' data-main='a.js'><script>------data-main(入口文件）
+入口文件a依赖于b,b依赖c;
+在入口文件a.js---require(['b.js'],function(){
+	
+})
+定义模块---define(['c.js'],function(){
+	里面定义函数---属于局部函数；
+	最后需要return 函数名；
+})
+requirejs原理---利用正则表达式，匹配要加载的文件，异步的、动态的创建script标签，加载js文件
+seajs---define(function(require){
+	var sortArray = require('a');s
+})
+
+async---异步的---标准浏览器---谁先加载完谁先执行
+defer--异步的--IE浏览器，现在chrome支持---等到dom结构加载完执行(保证文件的执行顺序 )
+
+vue:
+vue双向链接view和model(data)的信息
+对象中的属性不能加-，要加在属性外面加“ ”,如对象中写成'font-size'
+v-on:click = @click
+v-bind: = : 
+
+v-if---v-else---改变dom结构
+v-show--会一直存在在dom结构，但只是改变样式（隐藏）---频繁切换使用v-show
+template--模板--在v-if,v-for中使用会取消外面的html
+13---enter---@keyup.13=''或者@keyup.enter=''---按回车的时候执行相应的函数
+shift,ctrl,alt--功能键
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

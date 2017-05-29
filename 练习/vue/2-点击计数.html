@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<div id='app'>
+		<button @click='add'>click</button>
+		当前点击次数：<span v-text='num'></span>
+	</div>
+<!-- 	<div id='app'>
+		<button @click='num++'>click</button>
+		当前点击次数：<span v-text='num'></span>
+	</div> -->
+</head>
+<body>
+	<script src='vue.js'></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			num:''
+		},
+		methods:{
+			add:function(){
+				return this.num++;
+			}
+		}
+	})
+	</script>
+</body>
+</html>	

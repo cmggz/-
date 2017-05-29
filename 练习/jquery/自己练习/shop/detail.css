@@ -1,17 +1,155 @@
+#content{
+	overflow: hidden;
+}
 .display{
     float: left;
     width: 312px;
     height: 560px;	
 }
-.big-display{
-	cursor: crosshair; 
-	position: relative;
+.display .big-display .small-pic{
+    width: 310px;
+    height: 310px;
+    float: left;
+    cursor: crosshair; 
+    position: relative; 
+
 }
-.bigger{
-	position: absolute;
-	top: 178px; 
-	left: -1px; 
-	width: 131px; 
-	height: 131px; 
-	border-width: 1px; 
+.display .big-display .small-pic img{
+	width: 308px;
+	height: 308px;
+	border: 1px solid #DFDFDF;
+    position: relative;
 }
+.display .big-display .small-pic .mask{
+    width: 308px;
+    height: 308px;
+    border: 1px solid #DFDFDF;
+    position: absolute;
+    opacity: 0;
+    filter: alpha('opacity=0');
+    z-index: 6;
+    background: #f00;
+}
+.display .big-display .small-pic .drag{
+    width: 131px;
+    height: 131px;
+    position: absolute;
+    border-width: 1px;
+    opacity:0.5;
+    filter: alpha(opacity=50);
+    background: #f00;
+    z-index: 2;
+    display: none;
+}
+.display .big-display .big-pic{ 
+    width: 340px;
+    height: 340px;
+    overflow: hidden;
+    border: 1px solid #DFDFDF;
+    position: absolute;
+    left: 700px;
+    display: none;
+    background: #fff;
+}
+.display .look{
+    clear: both;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 320px;    
+}
+.display .imgs-list{
+    overflow: hidden;	
+}
+.display .imgs-list li img{
+	width: 60px;
+	height: 60px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #fff;
+}
+.display .tab{
+	margin-top: 15px;
+	overflow: hidden;
+}
+.display .tab-btns .selected{
+    color: #FFF;
+    background: #6D84B4;	
+}
+.display .tab-btns{
+	overflow: hidden;
+}
+.display .tab-btns li{
+	float: left;
+	text-align: center;
+    cursor: pointer;
+    padding: 1px 6px;
+    margin-right: 4px;
+    background: #F1F1F1;
+    border: 1px solid #898989;
+    border-bottom: none;
+}
+.display .tab-content{
+    border: 1px solid #898989;
+
+}
+.display .tab-content div{
+	display: none;
+}
+.details{
+    float: left;
+    overflow: hidden;
+    width: 448px;	
+	padding: 0 10px 10px 10px;
+}
+.details p,.price,.sale,.color,.size,.number,.tatal{
+	line-height: 25px;
+	overflow: hidden;
+}
+.details .price .price-val{
+    color: #404040;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+.details .sale .sale-val{
+    font-weight: 700;
+    color: #FF5500;
+    font: 24px Tahoma,Arial,Helvetica,sans-serif;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+.details .color li img{
+	float: left;
+	width: 30px;
+    height: 30px;
+    padding: 1px;
+    background: #EEE;
+    border: 1px solid #BBB;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.details .color li img.select{
+    border:1px solid #f60;
+}
+.details .color li img.selected{
+    border:1px solid #f60;
+}
+.details .size li {
+	float: left;
+    margin-right: 6px;
+    border: 1px solid #AAA;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.evaluate img{
+    width: 80px;
+    height: 16px;
+    margin-bottom: 20px;
+    list-style: none;
+    background: url(images/star-matrix.gif) no-repeat 0 0;	
+}
+

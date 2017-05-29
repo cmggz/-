@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='app'>
+		<demo :my-msg='xxxx' msg2='999'>
+			<p slot='title'>我是标题</p>
+			<p slot='content'>我是内容</p>
+		</demo> 
+		<!-- <demo my-msg='yyyy'></demo> -->
+	</div>
+	<script src='vue.js'></script>
+	<script type='text/x-template' id='temp'>
+		<div>
+			<h1>h1h1{{myMsg}}h1h{{msg2}}1h1</h1>
+			<slot name='title'>当没有标题</slot>
+			<slot name='content'>当没有内容</slot>
+			<!-- slot将<p>1111111111</p>显示在页面，作用：1.占位，2.里面写默认东西 -->
+		</div>		
+	</script>
+	<script>
+	//定义全局组件
+	// Vue.component('demo',{
+	// 	template:'<h1>hhhhh</h1>'
+	// });
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			xxxx:'5555'
+		},
+		components:{  //定义局部组件
+			demo:{
+				template:'#temp',
+				props:['myMsg','msg2']  //组件中myMsg在div中写成my-msg
+			}
+		}
+	})
+	</script>
+</body>
+</html>

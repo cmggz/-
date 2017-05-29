@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			width: 200px;
+			height: 200px;
+			background: #f00;
+		}
+		.font-size{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id='app'>
+		<input type="text" v-model='bbb' > <!-- v-html='bbb' -->
+		{{bbb}}
+		<br>
+		<!-- v-on:click = @click -->
+		<button @click='ccc++'>click</button>
+		<!-- <button v-on:click='add'>click</button> -->
+		当前点击次数：{{ccc}}
+		<br>
+		<!-- v-bind: = : -->
+		<div :id='ddd'>123</div>
+		<!-- <button @click='show'>click</button> -->
+		<button @click='isRed = !isRed'>click</button>
+		<div :class={red:isRed}>dssd</div>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	//vue双向链接view和model(data)的信息
+	//对象中的属性不能加-，要加在属性外面加“ ”
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			bbb:'',
+			ccc:0,
+			ddd:'div2',
+			isRed:true
+		}
+		// methods:{
+		// 	add:function(){
+		// 		this.ccc++;
+		// 	}
+		// }
+		// methods:{
+		// 	show:function(){
+		// 		this.isRed = !this.isRed;
+		// 	}
+		// }
+	})
+
+	//第一种表示：
+	// <div :class='classObj'>dssd</div>
+	// 	data:{
+	// 		classObj:{
+	// 		red:true,
+	// 		'font-size':true
+	// 		}		
+	//	}
+
+	
+	//第二种表示：
+	// <div :class=[classA,classB]>dssd</div>
+	// data:{
+	// 	classA:'red',
+	// 	classB:'font-size'			
+	// }	
+
+
+	//v-if---v-else---改变dom结构
+	//v-show--会一直存在在dom结构，但只是改变样式（隐藏）---频繁切换使用v-show
+	//template--模板--在v-if,v-for中使用会取消外面的html
+	//13---enter---@keyup.13=''或者@keyup.enter=''---按回车的时候执行相应的函数
+	//shift,ctrl,alt--功能键
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='app'>
+		是否额外付费：<input type="checkbox" @click='show'>
+		<ul>
+			<li v-for='obj in arr'>{{obj.name}} {{obj.price}}
+			<input type="checkbox" v-model='arr2' :value='obj' >
+			</li>
+		</ul>
+		订单信息
+		<ul>
+			<li v-for='obj in arr2'>{{obj.name}} {{obj.price}}</li>
+		</ul>
+		总金额：{{total}}	
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			arr:[],
+			arr2:[{name:'豪宅',price:2000}]
+		},
+		computed:{
+			total:function(){
+				var num = 0;
+				this.arr2.forEach(function(obj){
+					num += obj.price;
+				})
+				return num;
+			}
+		},
+		methods:{
+			show:function(){
+				if(event.target.checked){
+					this.arr = [{name:'床',price:100},{name:'桌子',price:50},{name:'椅子',price:30}]
+				}else{
+					this.arr.splice(0);
+					this.arr2.splice(1);
+				}
+			}
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			width: 200px;
+			height: 200px;
+			background: #f00;
+		}
+		.font{
+			font-size: 20px;
+			color: #fff;
+		}
+	</style>
+	<div id='app'>
+		<button @click='show'>click</button>
+		<div :class='obj'>123</div>
+	</div>
+</head>
+<body>
+	<script src='vue.js'></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			num:'',
+			obj:{
+				red:true,
+				font:true
+			}
+		},
+		methods:{
+			show:function(){
+				this.obj.red = !this.obj.red;
+			}
+		}
+	})
+	</script>

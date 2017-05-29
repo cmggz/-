@@ -1,15 +1,15 @@
-$('.brand').on('mouseover',function(){
-	$('.sub-brand').css('display','block');
-});
-$('.man').on('mouseover',function(){
-	$('.sub-man').css('display','block');
-});
-$('.brand').on('mouseout',function(){
+$('.brand').hover(function(){
+		$('.sub-brand').css('display','block');
+	}
+,function(){
 	$('.sub-brand').css('display','none');
-});
-$('.man').on('mouseout',function(){
+})
+$('.man').hover(function(){
+		$('.sub-man').css('display','block');
+	}
+,function(){
 	$('.sub-man').css('display','none');
-});
+})
 
 $('#skin-btns li').on('click',function(){
 	$(this).addClass('selected').siblings().removeClass('selected');

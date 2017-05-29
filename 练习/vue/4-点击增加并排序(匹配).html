@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id='app'>
+		<input type="text" v-model='msg' @keyup='filter'>
+		<button @click='add'>add</button>
+		<ul>
+			<li v-for='obj in showItems' :class='{red:obj.active}' @click='obj.active=!obj.active'>{{obj.val}}</li>
+		</ul>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			msg:'',
+			items:[],
+			showItems:[]
+		},
+		methods:{
+			add:function(){
+				this.items.push({val:this.msg,active:false});
+				this.msg='';
+				this.items.sort(function(a,b){
+					return a.val>b.val;
+				});
+				this.showItems = this.items;
+			},
+			filter:function(){
+				var _msg = this.msg;
+				var arr = this.items.filter(function(obj){
+					return obj.val.indexOf(_msg) >-1;
+				});
+				this.showItems = arr;
+			}
+		}
+	})
+	</script>
+</body>
+</html>

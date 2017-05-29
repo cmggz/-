@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		{{firstName}} + {{lastName}} = {{fullName}}
+<!-- 		{{firstName}} + {{lastName}} = {{fullName()}} -->
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			firstName:'zhang',
+			lastName:'san'
+		},
+		computed:{			//computed--计算属性--会有缓存
+			//简写
+			// fullName:function(){
+			// 	return this.firstName +' '+ this.lastName;
+			// }
+			fullName:{
+				get:function(){			//get取值
+					return this.firstName +' '+ this.lastName;					
+				},
+				set:function(val){		//set赋值
+					var arr = val.split(' ');
+					this.firstName = arr[0];
+					this.lastName = arr[1];
+				}
+			}
+		}
+		// methods:{
+		// 	fullName:function(){
+		// 	return this.firstName +' '+ this.lastName;
+		// 	}	
+		// }
+	})
+	</script>
+</body>
+</html>
