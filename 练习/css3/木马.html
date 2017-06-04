@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#stage{
+			width: 1000px;
+			height: 300px;
+			background: #ccc;
+			margin:100px auto;
+			border:1px solid #000;
+			-webkit-perspective:800px;
+			-webkit-perspective-origin:center 20%;
+		}
+		#container{
+			width: 128px;
+			height: 100px;
+			position: relative;
+			margin:100px auto;
+			-webkit-transform-style:preserve-3d;
+		}
+		#container img{
+			width: 128px;
+			height: 100px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div id="container">
+		</div>
+	</div>
+	<script>
+	var oContainer = document.getElementById('container');
+	var html='';
+	var x = 64/Math.tan(20*Math.PI/180)+20;
+	for(var i=0; i<9; i++){
+		html += '<img src="旋转的木马/'+(i+1)+'.jpg" style="-webkit-transform:rotateY('+(-i)*40+'deg) translateZ('+x+'px)"/>';
+	}
+	oContainer.innerHTML = html;
+	</script>
+</body>
+</html>

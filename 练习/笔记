@@ -312,6 +312,28 @@ template--模板--在v-if,v-for中使用会取消外面的html
 13---enter---@keyup.13=''或者@keyup.enter=''---按回车的时候执行相应的函数
 shift,ctrl,alt--功能键
 
+css3五个前缀：-webkit-xx,-moz-xx,-ms-xx,-o-xx,xx
+
+伪类：元素真实存在；
+伪对象：元素不存在
+
+背景图片从padding开始
+
+盒模型：
+标准盒模型（设置padding和border，内容不变，整体变大）
+怪异盒模型（设置padding和border，内容区域会缩小，整体不变）（没有<!DOCTYPE html>，IE6以下 为怪异盒模型）
+
+弹层盒模型：(随着浏览器变化变化)
+父元素设置display:box;---代表可以分配
+父元素也可以设置box-orient:horizonal/vertical;----代表横排还是竖排,默认是横排
+父元素也可设置box-pack:start/center/end/justify;----代表水平方向在左边/中间/右边/公平
+父元素也可设置box-align:start/center/end;---代表垂直方向上边/中间/下边
+父元素也可设置box-direction:reverse;---旋转
+
+子元素分别设置box-flex:n;---n代表分几份，分配的是剩余空间
+子元素也可以设置width:**px;
+子元素也可设置box-ordinal-group:n;---定义子元素显示顺序，n越大越往后排，默认1
+
 
 
 

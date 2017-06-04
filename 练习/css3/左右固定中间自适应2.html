@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.content{
+			display: -webkit-box;
+		}
+		.left{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+		.right{
+			width: 100px;
+			height: 100px;
+			background: #00f;
+		}
+		.center{
+			height: 100px;
+			background: #0f0;
+			-webkit-box-flex:1;
+			margin: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>
