@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#stage{
+			width: 1000px;
+			height: 300px;
+			margin: 100px auto;
+			background: #ccc;
+			overflow: hidden;
+			box-shadow: 0 0 2px 8px rgba(0,0,0,0.6);
+			-webkit-perspective:800px;
+			-webkit-perspective-origin:center -20%;
+		}
+		#container{
+			width: 128px;
+			height: 100px;
+			margin: 80px auto;
+			position: relative;
+			-webkit-transform-style:preserve-3d;
+			-webkit-transition:transform 2s ease;
+		}
+		#container img{
+			width: 128px;
+			height: 100px;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div id="container"></div>
+	</div>
+	<script>
+	var oContainer = document.getElementById('container');
+	var x = 64/Math.tan(20*Math.PI/180)+20;
+	var count = 0;
+	for(var i=0; i<9; i++){
+		var oImg = new Image();
+		oImg.onload = function(){
+			count++;
+			if(count==9){
+				var aImg = document.getElementsByTagName('img');
+				for(var i=0;i<9;i++){
+					aImg[i].style.WebkitTransition = 'transform 2s ease '+(8-i)*100+'ms';
+					aImg[i].style.WebkitTransform='rotateY('+(-i)*40+'deg) translateZ('+x+'px)';
+				}
+			}
+		}
+		oImg.src='旋转的木马/'+(i+1)+'.jpg';
+		oContainer.appendChild(oImg);
+	}
+	var num = 0;
+		oContainer.onclick = function(){
+			num++;
+			this.style.WebkitTransform = 'rotateY('+num*40+'deg)';
+		}
+	</script>
+</body>
+</html>
