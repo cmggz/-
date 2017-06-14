@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>001</li>
+		<li>002</li>
+		<li>003</li>
+	</ul>
+	<script>
+		var aLi = document.getElementsByTagName('li');
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index = i;
+			aLi[i].onclick = function(){
+				console.log(index);
+			}
+		}
+		for(let i=0; i<aLi.length; i++){
+			aLi[i].onclick = function(){
+				console.log(i);
+			}
+		}
+		//闭包--一个内部函数引用了一个外部函数的局部变量，当外部函数执行完，它的局部变量不被释放
+
+		console.log(a);
+		var a = 10; //变量提升---输出undefined
+		a = 10; //报错
+		let a = 10; //没有变量提升---报错
+
+		//let 块级作用域{}
+		//报错---不能重新定义,var不报错
+		let b=1;
+		let b=5;
+
+		//let作用域--临时失效区 
+		
+		//const -- 常量
+
+
+
+	</script>
+</body>
+</html>

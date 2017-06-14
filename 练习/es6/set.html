@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var arr = new Array();
+	arr[0]=1;
+	console.log(arr);
+	
+	var s = new Set();//不能放重复值
+	s.add(1);//1,2,3代表数值
+	s.add(2);
+	s.add(3);
+	s.delete(2);
+	// s.clear();
+	s.has(2);//--indexOf
+	// s.size();
+	s.forEach(function(val,key){
+		console.log(val,key);
+	})
+	console.log(s);
+
+
+	//数组去重
+	var arr = [1,2,3,4,5,2,5,4,6];
+	var newArr = [];
+	for(var i=0; i<arr.length; i++){
+		if(newArr.indexOf(arr[i]) == -1){
+			newArr.push(arr[i]);
+		}
+	}
+	console.log(newArr);
+
+	//数组去重
+	var newArr = [];
+	for(var i=0; i<arr.length; i++){
+		if(i == arr.indexOf(arr[i])){
+			newArr.push(arr[i]);
+		}
+	}
+	console.log(newArr);
+
+	//数组去重
+	var s = new Set(arr);
+	var newArr = Array.from(s);
+	console.log(newArr);
+	</script>
+</body>
+</html>

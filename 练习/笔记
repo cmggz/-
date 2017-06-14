@@ -169,6 +169,8 @@ cursor: pointer;/*鼠标变手形*/
 垂直局中
 1.vertical-align:middle;(两个元素并列时，单行文本)
 2.单行子元素垂直居中：给父元素设置height和line-hight,可以使子元素垂直居中
+3.多行元素垂直居中：给父元素设置display:table;
+					  子元素设置display: table-cell;vertical-align: middle;	
 
 元素单位：px；em(相对于自己的父元素大小)，rem(相对于自己的根元素html的大小)
 
@@ -336,6 +338,8 @@ css3五个前缀：-webkit-xx,-moz-xx,-ms-xx,-o-xx,xx
 
 外边距合并(父元素设置外边距，子元素要在父元素的基础上设置外边距)问题解决：
 1.给父元素设置overflow: hidden;2.给父元素加边框；3.子元素浮动或者定位
+
+
 
 
 

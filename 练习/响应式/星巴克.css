@@ -1,0 +1,425 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+#header{
+	height: 100px;
+	background: #fff;
+	display: -webkit-box;
+}
+#menu{
+	-webkit-box-flex:5;
+
+}
+#left{
+	padding: 30px 0 0  37px;	
+}
+#left img{
+	display: block;
+}
+#left span{
+	font-size: 12px;
+	margin-left: 2px;
+	letter-spacing: 0.5px;/*字之间的空隙*/
+}
+#logo{
+	-webkit-box-flex:2;
+
+}
+#center{
+	text-align: center;
+	padding: 15px 0;	
+}
+#center img{
+	width: 73px;
+}
+#login{
+	-webkit-box-flex:5;
+}
+#right{
+	
+	text-align: right;
+
+	color: #4e4e4e;
+	font-size: 16px;
+	padding-top: 20px;	
+	padding-right: 30px;	
+}
+#login a{
+	font-size: 14px;
+	font-weight: 700;
+	color: #b89f7a;
+}
+#banner{
+	position: relative;
+}
+#banner img{
+	width: 100%;
+	display: block;/*取消图片下面白色间隙*/
+}
+#banner span{
+	background: #b89f7a;
+	width: 106px;
+	height: 52px;
+	color: #fff;
+	text-align: center;
+	line-height: 52px;
+	display: block;
+	position: absolute;
+	right: 29%;
+	bottom: 8px;
+}
+#banner .banner2{
+	display: none;
+}
+#rewards-box{
+	background: #000;
+}
+#rewards{
+	width: 970px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 40px 0 50px 0;
+}
+#rewards-mark{
+	width: 350px;
+	padding-left: 90px;
+	float: left;
+}
+#rewards-mark p{
+	color: #fff;
+	font-size: 18px;
+	margin-top: 30px;
+}
+#rewards-content{
+	width: 430px;
+	float: right;
+}
+#rewards-content .con-title{
+	color: #fff;
+	font-size: 25px;	
+}
+#rewards-content .con-txt{
+	font-size: 16px;
+	color: #fff;
+}
+#rewards-content .con-btns{
+	margin-top: 15px;
+}
+#rewards-content .login-btn:hover,#rewards-content .register-btn:hover{
+	color: #fff;
+	background: #b89f7a;
+}
+#rewards-content .login-btn,#rewards-content .register-btn{
+	width: 106px;
+	height: 46px;
+	border: 2px solid #b89f7a;
+	color: #b89f7a;
+	line-height: 46px;
+	text-align: center;
+	display: inline-block;
+	margin-right: 10px;
+}
+#rewards-content .more-btn{
+	color: #b89f7a;
+	font-size: 14px;
+	margin-left: 30px;
+}
+#dd{
+	position: relative;
+}
+#dd img{
+	width: 100%;
+	display: block;/*取消图片下面白色间隙*/
+}
+#dd span{
+	background: #b89f7a;
+	width: 106px;
+	height: 52px;
+	color: #fff;
+	text-align: center;
+	line-height: 52px;
+	display: block;
+	position: absolute;
+	right: 50%;
+	bottom: 50px;
+}
+#dd .dd2{
+	display: none;
+}
+#app{
+	background: url('星巴克/app_bg.gif') 0 center repeat;
+}
+#app1{
+	overflow: hidden;
+}
+.app-device{
+	float: left;
+	width: 35%;
+	height: 215px;
+	background: url('星巴克/app_device.png') center center no-repeat;
+	background-size: contain;
+}
+.app-download{
+	float: left;
+	width: 20%;
+	margin-top: 25px;
+	text-align: center;
+}
+.app-download img{
+	width: 130px;
+}
+.app-content{
+	float: left;
+	width: 45%;
+	margin-top: 45px;
+}
+.app-content p{
+	font-size: 25px;
+	color: #3d3d3d;
+}
+.app-content a{
+	font-size: 14px;
+	color: #b89f7a;
+}
+#app2{
+	display: none;
+}
+.app2-content p{
+	font-size: 20px;
+	color: #3d3d3d;
+	text-align: center;
+	padding-top: 30px;
+	margin: 0 auto 30px auto;
+}
+.app2-dd{
+	overflow: hidden;
+}
+.app2-device{
+	float: left;
+	width: 50%;
+	height: 215px;
+	background: url('星巴克/app_device.png') center center no-repeat;
+	background-size: contain;
+}
+.app2-download{
+	float: left;
+	width: 30%;
+	margin-left: 20px;
+}
+.app2-download img{
+	padding-top: 80px;
+	width: 120%;
+}
+.app2-download a{
+	font-size: 14px;
+	color: #b89f7a;
+	padding-left: 35px;
+}
+#mosaic{
+	overflow: hidden;
+}
+#mosaic .tmall-cn,#mosaic .tmall{
+	position: relative;
+	width: 50%;
+	float: left;
+}
+#mosaic .tmall-cn img,#mosaic .tmall img{
+	width: 100%;
+	display: block;
+}
+#mosaic .tmall-cn h2,#mosaic .tmall h2{
+	position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 38px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 200;
+}
+#mosaic .tmall-cn h3,#mosaic .tmall h3{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 22px;
+    color: #a98e67;
+    letter-spacing: 3px;
+}
+#wsg-box{
+	width: 100%;
+	background: #106e4b;
+}
+#wsg{
+	width: 767px;
+	padding: 30px 0;
+	margin: auto;
+	overflow: hidden;
+}
+.wsg-left,.wsg-right{
+	width: 383px;
+	height: 150px;
+	float: left;
+	overflow: hidden;
+}
+.wsg1{
+	background: url('星巴克/wsg-title.png') center center no-repeat;
+	width: 177px;
+    height: 127px;
+}
+.wsg2{
+	background: url('星巴克/wsg-qrcode.png') center center no-repeat;
+	width: 106px;
+    height: 150px;
+}
+.wsg3{
+	background: url('星巴克/wsg-cup.png') center center no-repeat;
+	width: 98px;
+	height: 162px;
+}
+.wsg4{
+	background: url('星巴克/wsg-wording.png') center center no-repeat;
+	width: 184px;
+	height: 142px;
+}
+.wsg1,.wsg2,.wsg3,.wsg4{
+	background-size: contain;	
+	margin: 0 25px;
+	float: left;
+}
+#col-box{
+	display: -webkit-flex;
+	justify-content: center;
+	-webkit-flex-wrap: wrap;
+}
+.col-item{
+	width: 240px;
+	height: 280px;
+	margin: 15px;
+	box-shadow: 0 0 2px #ccc;
+}
+.col-item h3,.col-item p{
+	text-align: center;
+	padding: 10px 0;
+	color: #000;
+}
+@media screen and (max-width:991px){
+	#banner .banner2{
+		display: block;
+	}
+	#banner .banner1{
+		display: none;
+	}
+	#banner span{
+		right: 15px;
+		bottom: 60px;
+	}
+}
+@media screen and (max-width:767px){
+	#right{
+		font-size: 12px;
+		padding-right: 10px;
+	}
+	#left{
+		padding-left: 15px;
+	}
+	#rewards{
+		width: 100%;
+	}
+	#rewards-mark img{
+		width: 160px;
+	}
+	#rewards-mark,#rewards-content{
+		float: none;
+		width: 100%;
+		padding-left: 0;
+		text-align: center;
+	}
+	#rewards-content .login-btn,#rewards-content .register-btn,#rewards-content .more-btn{
+		display: block;
+	}
+	#rewards-content .login-btn,#rewards-content .register-btn{
+		width: 70%;
+		margin: 0 auto;
+	}
+	#rewards-content .register-btn{
+		margin: 8px auto 20px;
+	}
+	#rewards-content .con-title{
+		margin-top: 30px;
+	}
+	#rewards-content .more-btn{
+		text-align: right;
+		margin-right: 35px;
+	}
+	#rewards-content .con-txt{
+		margin: 10px 0 30px 0;
+	}
+	#app1{
+		display: none;
+	}
+	#app2{
+		display: block;
+	}
+	#mosaic .tmall-cn,#mosaic .tmall{
+		width: 100%;
+	}
+	.wsg1{
+		background: url('星巴克/wsg-cup.png') center center no-repeat;
+		width: 98px;
+		height: 162px;
+	}
+	.wsg2{
+		background: url('星巴克/wsg-title.png') center center no-repeat;
+		width: 177px;
+	    height: 127px;
+	}
+	.wsg3{
+		background: url('星巴克/wsg-qrcode.png') center center no-repeat;
+		width: 106px;
+	    height: 150px;
+	}
+	.wsg1,.wsg2,.wsg3,.wsg4{
+		background-size: contain;
+	}
+	.wsg-left,.wsg-right{
+		width: 100%;
+	}
+}
+@media screen and (max-width:667px){
+	#col-box{
+		justify-content: space-between;
+	}
+	.col-item{
+		margin: 15px 0;
+		width: 136px;
+		height: 220px;	
+	}
+	.col-item img,.col-item h3,.col-item p{
+		width: 100%;
+	}
+}
+@media screen and (max-width:640px){
+	#dd .dd2{
+		display: block;
+	}
+	#dd .dd1{
+		display: none;
+	}
+	#dd span{
+		right: 0;
+		bottom: 10px;
+	}
+}
+@media screen and (max-width:480px){
+	#center img{
+		width: 24%;
+	}
+}

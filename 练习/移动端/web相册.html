@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		#small{
+			width: 100%;
+		} 
+		#small img{
+			width: 25%;
+			border-right:4px solid #000;
+			border-bottom:4px solid #000;
+			box-sizing: border-box;	
+			float: left;
+		}
+		#big{
+			width: 100%;
+			height: 100%;
+			background: #000;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+		}
+	</style>
+</head>
+<body>
+	<div id="small"></div>
+	<div id="big"></div>
+	<script src='js/jquery.min.js'></script>
+	<script src='js/jquery.mobile-1.4.5.min.js'></script>
+	<script>
+		// var oSmall = document.getElementById('small');
+		// var oBig = document.getElementById('big');
+		var html='';
+		var $big = $('#big');
+		var $small = $('#small');
+		var iNow = 0;
+		for(var i=0; i<24; i++){
+			html+='<img src="img/thumbs/'+(1+i)+'.jpg" alt="" />'
+		}
+		//oSmall.innerHTML = html;
+		$small.html(html);
+
+		var iNow=0;
+		$('#small img').on('tap',function(e){
+			$small.hide();
+			$big.show().css('background-image','url(img/'+($(this).index()+1)+'.jpg)');
+			e.preventDefault();
+		})
+		$big.on('tap',function(e){
+			$small.show();
+			$big.hide();
+			e.preventDefault();
+		}).on('swipeleft',function(){
+			iNow++;
+			if(iNow == $('#small img').length){
+				iNow = 0;
+			}
+			$big.show().css('background-image','url(img/'+(iNow+1)+'.jpg)');
+		}).on('swiperight',function(){
+			iNow--;
+			if(iNow == -1){
+				iNow = $('#small img').length;
+			}
+			$big.show().css('background-image','url(img/'+(iNow-1)+'.jpg)');
+		})
+	</script>
+</body>
+</html>	

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//定义一个类
+	function Pig(option){
+		this.name = option.name;
+		this.age = option.age;
+	}
+	Pig.prototype.eat = function(){
+		console.log(this.name+' is eating')			
+	}
+	var pig1 = new Pig({
+		name:'wangwu',
+		age:20
+	});
+	pig1.eat();
+
+	//es6 定义类
+	class Cat{
+		constructor(name){
+			this.name = name;
+		}
+		say(){
+			console.log(this.name);
+		}
+	}
+	var c = new Cat('mimi');
+	c.say();
+
+	class BsCat extends Cat{
+		constructor(age){
+			this.age = age;
+		}
+		eat(){
+			console.log('eating');
+		}
+	}
+	</script>
+</body>
+</html>
